@@ -8,14 +8,19 @@ const Feed = () => {
   const [images, setImages] = useState([]);
 
   const fetchRandomPhotos = () => {
-    getRandomPhotos().then((data) => {
-      if (data.errors) {
-        alert("Could not fetch photos. Please try again later.");
-      } else {
-        console.log(data);
-        setImages([...images, ...data]);
-      }
-    });
+    getRandomPhotos()
+      .then((data) => {
+        if (data.errors) {
+          alert("Could not fetch photos. Please try again later.");
+        } else {
+          console.log(data);
+          setImages([...images, ...data]);
+        }
+      })
+      .catch(() => {
+        setImages([]);
+        alert("Could not fetch photos from Unsplash. API limit exceeded");
+      });
   };
 
   useEffect(() => {
