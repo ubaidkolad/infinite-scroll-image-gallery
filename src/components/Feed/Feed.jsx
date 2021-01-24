@@ -26,7 +26,9 @@ const Feed = () => {
     <InfiniteScroll
       pageStart={0}
       loadMore={() => {
-        fetchRandomPhotos();
+        setTimeout(() => {
+          fetchRandomPhotos();
+        }, 2000);
       }}
       hasMore
       loader={<Loader />}
