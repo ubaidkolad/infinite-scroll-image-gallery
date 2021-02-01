@@ -8,7 +8,7 @@ const Home = () => {
           className="container text-center"
           style={{ paddingTop: "10%", paddingBottom: "70px" }}
         >
-          <h2 className="text-white">TaskPro Image Gallery</h2>
+          <h2 className="text-white">Image Gallery</h2>
           <small className="text-white">
             High resolution images from creators all around the world.
           </small>
